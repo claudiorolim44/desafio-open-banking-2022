@@ -101,7 +101,7 @@ function App() {
           ) : ( 
             <>
               <h1 className="pageTitle">
-                Instituições participantes do Open Banking no Brasil
+                Instituições participantes no Brasil
               </h1>
               <MUIDataTable
                 title={""}
