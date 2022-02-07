@@ -7,7 +7,7 @@ var participanteModelo = {
 };
 
 // Retorna a lista de participantes fornecidas pelo openbankingbrasil.org.br
-function obterTodosParticipantes(solicitante) {
+function obterTodosParticipantes() {
     return new Promise((resolve, reject) => {
         axios.get(participantesUrl)
         .then((response) => {
