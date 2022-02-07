@@ -1,5 +1,5 @@
 // server/src/index.js
-
+const path = require('path');
 const express = require("express");
 
 var participantesRouter = require('./routes/api/participantes');
