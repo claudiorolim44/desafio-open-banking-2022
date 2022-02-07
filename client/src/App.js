@@ -3,6 +3,7 @@
 import React from "react";
 import logo from "./logo.png";
 import MUIDataTable from "mui-datatables";
+import Navbar from "./Navbar"
 import './App.css'
 
 const colunas = [
@@ -94,6 +95,7 @@ function App() {
 
   return (    
     <div id="layout">
+      <Navbar/>
       <div class="mainContainer">
         <div className={"maxPageWidth"}>
           {!servidoresDeAutorizacao ? (
