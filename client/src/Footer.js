@@ -23,7 +23,7 @@ const Footer = () => {
                 </a>
             </div>
             <div className="footerBottomPart maxPageWidth">
-                <span>CLAUDIO AUGUSTO PEREIRA ROLIM | 2022</span>  
+                <span>CLAUDIO AUGUSTO PEREIRA ROLIM | 2022 | Desafio de desenvolvimento Open Banking</span>  
             </div>
         </Paper>
     )
