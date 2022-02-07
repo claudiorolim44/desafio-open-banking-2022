@@ -1,0 +1,26 @@
+#footer {
+    padding-left: 1.75rem; 
+    padding-right: 1.75rem; 
+    margin-top: auto;
+    background-color: rgb(20, 125, 150); 
+    border-radius: 0rem !important; 
+}
+
+#footer .footerTopPart {
+    padding: 1.5rem 0rem 0.75rem;
+} 
+
+#footer .footerBottomPart {
+    padding: 0.75rem 0rem 1.5rem;
+    border-top: solid 1px lightgray;
+    color: #ddd;
+    display: block;
+    font-weight: 600;
+    font-size: 0.825rem;
+}
+
+#footer img {
+    margin: 0rem 0rem;
+    height: 2.25rem;
+    margin-right: 1rem;
+}
