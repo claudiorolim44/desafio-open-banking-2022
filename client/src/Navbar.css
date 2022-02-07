@@ -1,0 +1,16 @@
+#navBar {
+    padding-left: 1.75rem; 
+    padding-right: 1.75rem; 
+    background-color: rgb(20, 125, 150); 
+    border-radius: 0rem !important; 
+}
+
+#navBar .headerBar {
+    padding: 0.25rem 0rem;
+}
+
+#navBar img {
+    margin: 1rem 0rem;
+    height: 3.75rem;
+}
+
