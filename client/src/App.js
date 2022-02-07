@@ -104,7 +104,7 @@ function App() {
           ) : ( 
             <>
               <h1 className="pageTitle">
-                Instituições participantes no Brasil
+                Instituições participantes do Open Banking no Brasil
               </h1>
               <p className="textoDescritivo">
                 Esta página é a solução de um desafio do desenvolvimento de uma pequena aplicação fullstack que 
