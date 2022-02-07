@@ -1,7 +1,7 @@
 // client/src/App.js
 
 import React from "react";
-import logo from "./logo.svg";
+import logo from "./logo.png";
 import "./App.css";
 
 function App() {
