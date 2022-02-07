@@ -12,6 +12,12 @@ function App() {
       .then((data) => setServidoresDeAutorizacao(data));
   }, []);
 
+  const imgContainerStyle = {
+    height: '100px', 
+    display: 'flex', 
+    alignItems: 'center'
+  }
+
   return (
     <div className="App">
       {!servidoresDeAutorizacao ? (
@@ -24,7 +30,20 @@ function App() {
                 {authorisationServer.CustomerFriendlyName}
                 <ul>
                   <li>
-                    Url de discovery: 
+                    <div style={imgContainerStyle}>
+                      <img 
+                        src={authorisationServer.CustomerFriendlyLogoUri}
+                        alt = {authorisationServer.CustomerFriendlyName}
+                        onError={({ currentTarget }) => {
+                          currentTarget.onerror = null; // impede looping
+                          currentTarget.src=logo;
+                        }}
+                        width="100"
+                      />
+                    </div>
+                  </li>
+                  <li>
+                    <span>Url de discovery: </span>
                     <a href={authorisationServer.OpenIDDiscoveryDocument}>
                       {authorisationServer.OpenIDDiscoveryDocument}
                     </a>
