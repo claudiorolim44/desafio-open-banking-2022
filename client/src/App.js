@@ -4,6 +4,7 @@ import React from "react";
 import logo from "./logo.png";
 import MUIDataTable from "mui-datatables";
 import Navbar from "./Navbar"
+import Footer from "./Footer"
 import './App.css'
 
 const colunas = [
@@ -132,6 +133,7 @@ function App() {
           )}       
         </div>   
       </div>
+      <Footer />
     </div>
   );
 }
