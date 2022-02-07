@@ -32,6 +32,9 @@ const colunas = [
     name: "Participante"
   },
   {
+    name: "Descrição"
+  },
+  {
     name: "Url de discovery",
     options: {
       filter: false,
@@ -67,6 +70,7 @@ function App() {
       dados.push([
         authorisationServer.CustomerFriendlyLogoUri,
         authorisationServer.CustomerFriendlyName,
+        authorisationServer.CustomerFriendlyDescription,
         authorisationServer.OpenIDDiscoveryDocument
       ]);
       return false;
