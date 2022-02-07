@@ -5,6 +5,7 @@ import logo from "./logo.png";
 import MUIDataTable from "mui-datatables";
 import Navbar from "./Navbar"
 import Footer from "./Footer"
+import muiTextLabels from "./muiTextLabels"
 import './App.css'
 
 const colunas = [
@@ -68,7 +69,8 @@ const opcoes = {
   draggableColumns: {enabled:true},
   rowsPerPageOptions: [5, 10, 15, 25, 100], 
   rowsPerPage: 25,
-  selectableRows: "none"
+  selectableRows: "none",
+  textLabels: muiTextLabels
 };
 
 function App() {
