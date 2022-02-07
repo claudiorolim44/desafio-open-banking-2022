@@ -8,6 +8,7 @@ const colunas = [
   {
     name: "Logo",
     options: {
+      filter: false,
       customBodyRender: (value, tableMeta, updateValue) => {
         const style = {height: '100px', display: 'flex', alignItems: 'center'}
         return(
@@ -32,6 +33,7 @@ const colunas = [
   {
     name: "Url de discovery",
     options: {
+      filter: false,
       customBodyRender: (value, tableMeta, updateValue) => (
         <a href={value}>{value}</a>
       )
