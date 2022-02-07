@@ -4,6 +4,7 @@
   "description": "Atividade de desenvolvimento de um módulo de aplicação que apresente uma lista com todos os participantes do Open Banking no Brasil",
   "main": "index.js",
   "scripts": {
+    "start": "node server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
