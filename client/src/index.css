@@ -19,3 +19,10 @@ h1.pageTitle {
   margin-right: 0;            
   display: block;             
 }
+
+.MuiTableCell-head * {
+  /* border: solid 1px red !important; */
+  /* text-align: center; */
+  justify-content: center;
+  font-weight: 500;
+}
