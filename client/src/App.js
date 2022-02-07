@@ -29,17 +29,31 @@ const colunas = [
     }
   },
   {
-    name: "Participante"
+    name: "Participante",
+    options: {
+      customBodyRender: (value, tableMeta, updateValue) => (
+        <div style={{textAlign: "center"}}>
+          <b style={{color: "#147D96"}}>{value}</b>
+        </div>
+      )
+    }
   },
   {
-    name: "Descrição"
+    name: "Descrição",
+    options: {
+      customBodyRender: (value, tableMeta, updateValue) => (
+        <div style={{textAlign: "center"}}>
+          <span style={{color: "dimgray"}}>{value}</span>  
+        </div>
+      )
+    }
   },
   {
     name: "Url de discovery",
     options: {
       filter: false,
       customBodyRender: (value, tableMeta, updateValue) => (
-        <a href={value}>{value}</a>
+        <a class="hyperlinks" href={value}>{value}</a>
       )
     }
   },
@@ -89,7 +103,6 @@ function App() {
               <h1 className="pageTitle">
                 Instituições participantes do Open Banking no Brasil
               </h1>
-              <br />
               <MUIDataTable
                 title={""}
                 data={obterDados()}
