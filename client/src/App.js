@@ -44,6 +44,7 @@ const colunas = [
   {
     name: "Descrição",
     options: {
+      filter: false,
       customBodyRender: (value, tableMeta, updateValue) => (
         <div style={{textAlign: "center"}}>
           <span style={{color: "dimgray"}}>{value}</span>  
