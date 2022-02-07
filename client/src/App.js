@@ -6,7 +6,7 @@ import MUIDataTable from "mui-datatables";
 
 const colunas = [
   {
-    name: "",
+    name: "Logo",
     options: {
       customBodyRender: (value, tableMeta, updateValue) => {
         const style = {height: '100px', display: 'flex', alignItems: 'center'}
@@ -39,7 +39,15 @@ const colunas = [
   },
 ];
 
-const opcoes = {};
+const opcoes = {
+  elevation: 2,
+  responsive: "standard",
+  filterType: "multiselect",
+  draggableColumns: {enabled:true},
+  rowsPerPageOptions: [5, 10, 15, 25, 100], 
+  rowsPerPage: 10,
+  selectableRows: "none"
+};
 
 function App() {
   const [servidoresDeAutorizacao, setServidoresDeAutorizacao]  = React.useState(null);
