@@ -4,18 +4,29 @@ import React from "react";
 import logo from "./logo.png";
 
 function App() {
-  const [data, setData] = React.useState(null);
+  const [servidoresDeAutorizacao, setServidoresDeAutorizacao]  = React.useState(null);
 
   React.useEffect(() => {
-    fetch("/api")
+    fetch("/api/servidores-de-autorizacao")
       .then((res) => res.json())
-      .then((data) => setData(data.message));
+      .then((data) => setServidoresDeAutorizacao(data));
   }, []);
 
   return (
     <div className="App">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Carregando..." : data}</p>
+      {!servidoresDeAutorizacao ? (
+        <h1>Carregando...</h1>
+      ) : ( 
+        <ul>
+          {servidoresDeAutorizacao.map(authorisationServer => {
+            return (
+              <li key={authorisationServer.CustomerFriendlyName}>
+                {authorisationServer.CustomerFriendlyName}
+              </li>
+            )
+          })}
+        </ul>
+      )}
     </div>
   );
 }
