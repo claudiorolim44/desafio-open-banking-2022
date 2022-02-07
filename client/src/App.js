@@ -110,7 +110,7 @@ function App() {
                 Instituições participantes do Open Banking no Brasil
               </h1>
               <p className="textoDescritivo">
-                Esta página é a solução de um desafio do desenvolvimento de uma pequena aplicação fullstack que 
+                Este projeto é a solução de um desafio do desenvolvimento de uma pequena aplicação fullstack que 
                 apresente uma lista de todos os participantes do Open Banking no Brasil (desenvolvido com base em uma 
                 <a class="hyperlinks" href={"https://data.directory.openbankingbrasil.org.br/participants"}> API </a>
                 fornecida pelo <a class="hyperlinks" href={"https://openbankingbrasil.org.br/"}>openbankingbrasil.org.br</a>, 
