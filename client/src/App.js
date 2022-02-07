@@ -22,6 +22,14 @@ function App() {
             return (
               <li key={authorisationServer.CustomerFriendlyName}>
                 {authorisationServer.CustomerFriendlyName}
+                <ul>
+                  <li>
+                    Url de discovery: 
+                    <a href={authorisationServer.OpenIDDiscoveryDocument}>
+                      {authorisationServer.OpenIDDiscoveryDocument}
+                    </a>
+                  </li>
+                </ul>
               </li>
             )
           })}
