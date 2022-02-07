@@ -2,6 +2,10 @@
 
 import React from "react";
 import logo from "./logo.png";
+import MUIDataTable from "mui-datatables";
+
+const colunas = ["Nome", "Url de discovery"];
+const opcoes = {};
 
 function App() {
   const [servidoresDeAutorizacao, setServidoresDeAutorizacao]  = React.useState(null);
@@ -12,10 +16,16 @@ function App() {
       .then((data) => setServidoresDeAutorizacao(data));
   }, []);
 
-  const imgContainerStyle = {
-    height: '100px', 
-    display: 'flex', 
-    alignItems: 'center'
+  function obterDados(){
+    const dados = [];
+    servidoresDeAutorizacao.map(authorisationServer => {
+      dados.push([
+        authorisationServer.CustomerFriendlyName,
+        authorisationServer.OpenIDDiscoveryDocument
+      ]);
+      return false;
+    })
+    return dados;
   }
 
   return (
@@ -23,36 +33,12 @@ function App() {
       {!servidoresDeAutorizacao ? (
         <h1>Carregando...</h1>
       ) : ( 
-        <ul>
-          {servidoresDeAutorizacao.map(authorisationServer => {
-            return (
-              <li key={authorisationServer.CustomerFriendlyName}>
-                {authorisationServer.CustomerFriendlyName}
-                <ul>
-                  <li>
-                    <div style={imgContainerStyle}>
-                      <img 
-                        src={authorisationServer.CustomerFriendlyLogoUri}
-                        alt = {authorisationServer.CustomerFriendlyName}
-                        onError={({ currentTarget }) => {
-                          currentTarget.onerror = null; // impede looping
-                          currentTarget.src=logo;
-                        }}
-                        width="100"
-                      />
-                    </div>
-                  </li>
-                  <li>
-                    <span>Url de discovery: </span>
-                    <a href={authorisationServer.OpenIDDiscoveryDocument}>
-                      {authorisationServer.OpenIDDiscoveryDocument}
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            )
-          })}
-        </ul>
+        <MUIDataTable
+          title={"Participantes do Open Banking no Brasil"}
+          data={obterDados()}
+          columns={colunas}
+          options={opcoes}
+        />
       )}
     </div>
   );
