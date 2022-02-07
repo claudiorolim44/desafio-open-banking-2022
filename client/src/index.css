@@ -27,7 +27,9 @@ p.textoDescritivo {
   margin-bottom: 0.5715em;    
   margin-left: 0;             
   margin-right: 0;            
-  display: block;             
+  display: block;     
+  text-align: justify;
+  text-justify: inter-word;        
 }
 
 .MuiTableCell-head * {
