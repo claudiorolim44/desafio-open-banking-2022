@@ -6,15 +6,28 @@ import MUIDataTable from "mui-datatables";
 
 const colunas = [
   {
-    name: "Logo",
+    name: "",
     options: {
-      customBodyRender: (value, tableMeta, updateValue) => (
-        <a href={value}>{value}</a>
-      )
+      customBodyRender: (value, tableMeta, updateValue) => {
+        const style = {height: '100px', display: 'flex', alignItems: 'center'}
+        return(
+          <div style={style}>
+            <img 
+              src={value}
+              alt = {value}
+              onError={({ currentTarget }) => {
+                currentTarget.onerror = null; // prevents looping
+                currentTarget.src=logo;
+              }}
+              width="100"
+            />
+          </div>
+        )
+      }
     }
   },
   {
-    name: "Nome"
+    name: "Participante"
   },
   {
     name: "Url de discovery",
@@ -56,7 +69,7 @@ function App() {
         <h1>Carregando...</h1>
       ) : ( 
         <MUIDataTable
-          title={"Participantes do Open Banking no Brasil"}
+          title={"Open Banking Brasil"}
           data={obterDados()}
           columns={colunas}
           options={opcoes}
