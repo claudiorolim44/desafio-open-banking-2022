@@ -79,14 +79,21 @@ function App() {
       <div class="mainContainer">
         <div className={"maxPageWidth"}>
           {!servidoresDeAutorizacao ? (
-            <h1>Carregando...</h1>
+            <h1 className="pageTitle">Carregando...</h1>
           ) : ( 
-            <MUIDataTable
-              title={"Open Banking Brasil"}
-              data={obterDados()}
-              columns={colunas}
-              options={opcoes}
-            />
+            <>
+              <h1 className="pageTitle">
+                Instituições participantes do Open Banking no Brasil
+              </h1>
+              <br />
+              <MUIDataTable
+                title={""}
+                data={obterDados()}
+                columns={colunas}
+                options={opcoes}
+              />
+            </>
+            
           )}       
         </div>   
       </div>
