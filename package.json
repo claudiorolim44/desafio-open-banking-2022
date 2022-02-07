@@ -1,0 +1,20 @@
+{
+  "name": "desafio-open-banking-2022",
+  "version": "1.0.0",
+  "description": "Atividade de desenvolvimento de um módulo de aplicação que apresente uma lista com todos os participantes do Open Banking no Brasil",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claudiorolim44/desafio-open-banking-2022.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/claudiorolim44/desafio-open-banking-2022/issues"
+  },
+  "homepage": "https://github.com/claudiorolim44/desafio-open-banking-2022#readme"
+}
