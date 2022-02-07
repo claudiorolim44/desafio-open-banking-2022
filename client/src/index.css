@@ -9,3 +9,13 @@ body {
   margin-right: auto;
   margin-left: auto; 
 }
+
+h1.pageTitle { 
+  font-size: 1.25em;          
+  font-weight: 600;           
+  margin-top: 1.75rem;         
+  margin-bottom: 1.75rem;      
+  margin-left: 0;             
+  margin-right: 0;            
+  display: block;             
+}
