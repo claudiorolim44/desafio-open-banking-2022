@@ -26,3 +26,12 @@ h1.pageTitle {
   justify-content: center;
   font-weight: 500;
 }
+
+.hyperlinks:link {
+  text-decoration: none;
+  color: rgb(35, 98, 159);
+}
+
+.hyperlinks:hover {
+  text-decoration: underline;
+}    
