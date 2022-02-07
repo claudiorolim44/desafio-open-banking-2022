@@ -3,6 +3,7 @@
 import React from "react";
 import logo from "./logo.png";
 import MUIDataTable from "mui-datatables";
+import './App.css'
 
 const colunas = [
   {
@@ -47,7 +48,7 @@ const opcoes = {
   filterType: "multiselect",
   draggableColumns: {enabled:true},
   rowsPerPageOptions: [5, 10, 15, 25, 100], 
-  rowsPerPage: 10,
+  rowsPerPage: 25,
   selectableRows: "none"
 };
 
@@ -73,18 +74,22 @@ function App() {
     return dados;
   }
 
-  return (
-    <div className="App">
-      {!servidoresDeAutorizacao ? (
-        <h1>Carregando...</h1>
-      ) : ( 
-        <MUIDataTable
-          title={"Open Banking Brasil"}
-          data={obterDados()}
-          columns={colunas}
-          options={opcoes}
-        />
-      )}
+  return (    
+    <div id="layout">
+      <div class="mainContainer">
+        <div className={"maxPageWidth"}>
+          {!servidoresDeAutorizacao ? (
+            <h1>Carregando...</h1>
+          ) : ( 
+            <MUIDataTable
+              title={"Open Banking Brasil"}
+              data={obterDados()}
+              columns={colunas}
+              options={opcoes}
+            />
+          )}       
+        </div>   
+      </div>
     </div>
   );
 }
