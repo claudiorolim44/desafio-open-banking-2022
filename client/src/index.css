@@ -20,6 +20,16 @@ h1.pageTitle {
   display: block;             
 }
 
+p.textoDescritivo {
+  color: dimgray;
+  font-size: 0.875em;         
+  margin-top: 0.5715em;       
+  margin-bottom: 0.5715em;    
+  margin-left: 0;             
+  margin-right: 0;            
+  display: block;             
+}
+
 .MuiTableCell-head * {
   /* border: solid 1px red !important; */
   /* text-align: center; */
