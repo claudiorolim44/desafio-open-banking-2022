@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/claudiorolim44/desafio-open-banking-2022/issues"
   },
-  "homepage": "https://github.com/claudiorolim44/desafio-open-banking-2022#readme"
+  "homepage": "https://github.com/claudiorolim44/desafio-open-banking-2022#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
 }
