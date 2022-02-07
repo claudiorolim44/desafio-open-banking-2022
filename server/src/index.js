@@ -17,7 +17,7 @@ app.get('/api', (req, res) => {res.json({ message: "Mensagem teste da API" })});
 app.use('/api/participantes', participantesRouter);
 app.use('/api/servidores-de-autorizacao', servidoresDeAutorizacaoRouter);
 
-//Demais requisições que não passam por /api será gerenciado pelo React
+//Demais requisições que não passam pela rota /api serão gerenciadas pelo React
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../../client/build', 'index.html'));
 });
