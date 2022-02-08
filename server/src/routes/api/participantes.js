@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var {obterTodosParticipantes, inserirTodosParticipantesNoBackup} = require(
-  '../../models/participante');
+var {obterTodosParticipantes, obterTodosParticipantesPeloBackup, 
+  inserirTodosParticipantesNoBackup} = require('../../models/participante');
 
 
 router.get('/', (req, res) => {
@@ -12,7 +12,10 @@ router.get('/', (req, res) => {
       res.send(data);
     })
     .catch((err) => {
-        res.status(500).send(err);
+        console.log("err.message", err.message)
+        obterTodosParticipantesPeloBackup()
+          .then(data => res.send(data))
+          .catch(err => res.status(500).send(err));
     });
 })
 
