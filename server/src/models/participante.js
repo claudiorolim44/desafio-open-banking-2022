@@ -5,7 +5,8 @@ const participantesUrl =
 
 var participanteModelo = {
     obterTodosParticipantes,
-    obterTodosParticipantesPeloBackup
+    obterTodosParticipantesPeloBackup,
+    atualizarTodosParticipantesNoBackup
 };
 
 // Retorna a lista de participantes fornecidas pelo openbankingbrasil.org.br
@@ -39,6 +40,26 @@ function obterTodosParticipantesPeloBackup() {
         });
     });
 }
+
+
+// Atualiza a lista de participantes em um backup em SQL 
+// (a ser utilizada caso já exista um backup previamente inserido)
+function atualizarTodosParticipantesNoBackup(json) {
+    const participantesApiResponse = JSON.stringify(json)
+    return new Promise((resolve, reject) => {
+        pool.query(
+            "UPDATE `api_backup` SET `api_response_backup` = ?, data = NOW() " + 
+                "WHERE (`api_url` = ?)", 
+            [participantesApiResponse, participantesUrl],
+            (error, result, fields) => {
+                if (error) {
+                    reject(error);
+                } else {
+                    resolve(result);
+                }
+            });
+    });
+};
 
 
 module.exports = participanteModelo;
