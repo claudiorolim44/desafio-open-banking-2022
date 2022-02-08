@@ -6,6 +6,7 @@ const participantesUrl =
 var participanteModelo = {
     obterTodosParticipantes,
     obterTodosParticipantesPeloBackup,
+    inserirTodosParticipantesNoBackup,
     atualizarTodosParticipantesNoBackup
 };
 
@@ -40,6 +41,31 @@ function obterTodosParticipantesPeloBackup() {
         });
     });
 }
+
+
+// Insere a lista de participantes em um backup em SQL
+function inserirTodosParticipantesNoBackup(json) {
+    const participantesApiResponse = JSON.stringify(json)
+    return new Promise((resolve, reject) => {
+        pool.query(
+            "INSERT INTO `api_backup` (`api_url`, `api_response_backup`) " + 
+            "VALUES (?, ?)",
+            [participantesUrl, participantesApiResponse],
+            (error, result, fields) => {
+                if (error) {
+                    atualizarTodosParticipantesNoBackup(json)
+                        .then((data) => {
+                            resolve(data);
+                        })
+                        .catch((err)=> {
+                            reject(err);
+                        })
+                } else {
+                    resolve(result);
+                }
+            });
+    });
+};
 
 
 // Atualiza a lista de participantes em um backup em SQL 
