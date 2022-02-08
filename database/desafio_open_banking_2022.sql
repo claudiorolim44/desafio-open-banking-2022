@@ -3,7 +3,7 @@ CREATE DATABASE `desafio_open_banking_2022` DEFAULT CHARACTER SET utf8mb4 COLLAT
 USE desafio_open_banking_2022;
 
 CREATE TABLE `desafio_open_banking_2022`.`api_backup` (
-  `ID` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `api_url` VARCHAR(512) NOT NULL,
   `api_response_backup` JSON NOT NULL,
   `data` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
