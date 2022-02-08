@@ -34,7 +34,8 @@ function obterTodosParticipantesPeloBackup() {
             if (error) {
                 reject(error);
             } else {
-                const jsonResult = JSON.parse(result[0].api_response_backup);
+                const jsonResult = result[0]?.api_response_backup ? 
+                    JSON.parse(result[0]?.api_response_backup) : []
                 resolve(jsonResult);
             }
         });
