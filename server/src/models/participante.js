@@ -6,8 +6,7 @@ const participantesUrl =
 var participanteModelo = {
     obterTodosParticipantes,
     obterTodosParticipantesPeloBackup,
-    inserirTodosParticipantesNoBackup,
-    atualizarTodosParticipantesNoBackup
+    inserirTodosParticipantesNoBackup
 };
 
 // Retorna a lista de participantes fornecidas pelo openbankingbrasil.org.br
