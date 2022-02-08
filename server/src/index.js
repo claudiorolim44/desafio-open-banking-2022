@@ -1,6 +1,7 @@
 // server/src/index.js
 const path = require('path');
 const express = require("express");
+require('dotenv').config();
 
 var participantesRouter = require('./routes/api/participantes');
 var servidoresDeAutorizacaoRouter = require('./routes/api/servidores-de-autorizacao');
