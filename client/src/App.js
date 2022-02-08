@@ -75,7 +75,8 @@ const opcoes = {
 };
 
 function App() {
-  const [servidoresDeAutorizacao, setServidoresDeAutorizacao]  = React.useState(null);
+  const [servidoresDeAutorizacao, setServidoresDeAutorizacao]  = 
+    React.useState(null);
 
   React.useEffect(() => {
     fetch("/api/servidores-de-autorizacao")
@@ -110,17 +111,21 @@ function App() {
                 Instituições participantes do Open Banking no Brasil
               </h1>
               <p className="textoDescritivo">
-                Este projeto é a solução de um desafio do desenvolvimento de uma pequena aplicação fullstack que 
-                apresente uma lista de todos os participantes do Open Banking no Brasil (desenvolvido com base em uma 
-                <a class="hyperlinks" href={"https://data.directory.openbankingbrasil.org.br/participants"}> API </a>
-                fornecida pelo <a class="hyperlinks" href={"https://openbankingbrasil.org.br/"}>openbankingbrasil.org.br</a>, 
-                a página oficial do Open Banking no Brasil) e com o prazo máximo de 48h para desenvolvimento. A aplicação 
-                foi inteiramente desenvolvida via código, usando HTML, CSS e JavaScript. O front-end foi 
-                implementado em React.js e  o back-end foi implementado em Node.js, ambos os módulos são 
-                desacoplados e se comunicam por APIs internas. O código fonte da aplicação (e todo o 
-                processo de desenvolvimento e commits) pode ser conferido em&nbsp;
-                <a class="hyperlinks" href={"https://github.com/claudiorolim44/desafio-open-banking-2022"}> 
-                 https://github.com/claudiorolim44/desafio-open-banking-2022</a>.
+                Este projeto é a demonstração de uma pequena Aplicação Full 
+                Stack (implementada com JavaScript, React, Node.js e banco de 
+                dados MySQL) que informa em tempo real quem são os participantes 
+                do Open Banking no Brasil, desenvolvida em menos de 48h como 
+                solução de um desafio. A aplicação extrai e utiliza dados de 
+                uma&nbsp;<a class="hyperlinks" href={
+                "https://data.directory.openbankingbrasil.org.br/participants"}> 
+                API</a> fornecida pelo&nbsp;<a class="hyperlinks" href={
+                "https://openbankingbrasil.org.br/"}>openbankingbrasil.org.br
+                </a> (a página oficial do Open Banking no Brasil). Maiores 
+                detalhes (como o código fonte da aplicação e todo o processo de 
+                desenvolvimento e commits) pode ser conferido em&nbsp;<a class=
+                "hyperlinks" href={
+                "https://github.com/claudiorolim44/desafio-open-banking-2022"}> 
+                https://github.com/claudiorolim44/desafio-open-banking-2022</a>.
             </p>              
 
             
