@@ -27,13 +27,13 @@ function obterTodosParticipantes() {
 function obterTodosParticipantesPeloBackup() {
     return new Promise((resolve, reject) => {
         pool.query(
-            `select api_response_data from api_backup ` + 
+            `select api_response_backup from api_backup ` + 
                 `where api_url = '${participantesUrl}';`, 
             (error, result, fields) => {
             if (error) {
                 reject(error);
             } else {
-                const jsonResult = JSON.parse(result[0].api_response_data);
+                const jsonResult = JSON.parse(result[0].api_response_backup);
                 resolve(jsonResult);
             }
         });
