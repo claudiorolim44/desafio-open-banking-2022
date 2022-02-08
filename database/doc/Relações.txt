@@ -1,0 +1,5 @@
+Entidades
+    Backup de API (api_backup) - Tabela que guarda dados consumidos em API para fins de backup
+    
+Relações
+    Não se aplica
