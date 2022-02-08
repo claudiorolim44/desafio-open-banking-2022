@@ -1,9 +1,11 @@
+var pool = require('../config/mysql');
 const axios = require('axios');
 const participantesUrl = 
     'https://data.directory.openbankingbrasil.org.br/participants'
 
 var participanteModelo = {
-    obterTodosParticipantes
+    obterTodosParticipantes,
+    obterTodosParticipantesPeloBackup
 };
 
 // Retorna a lista de participantes fornecidas pelo openbankingbrasil.org.br
@@ -19,6 +21,24 @@ function obterTodosParticipantes() {
     });
 };
 
+
+// Retorna a lista de participantes previamente armazenadas em um backup em SQL 
+// (a ser utilizada em caso de indisponibilidade do openbankingbrasil.org.br)
+function obterTodosParticipantesPeloBackup() {
+    return new Promise((resolve, reject) => {
+        pool.query(
+            `select api_response_data from api_backup ` + 
+                `where api_url = '${participantesUrl}';`, 
+            (error, result, fields) => {
+            if (error) {
+                reject(error);
+            } else {
+                const jsonResult = JSON.parse(result[0].api_response_data);
+                resolve(jsonResult);
+            }
+        });
+    });
+}
 
 
 module.exports = participanteModelo;
