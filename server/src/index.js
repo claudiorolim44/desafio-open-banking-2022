@@ -2,6 +2,7 @@
 const path = require('path');
 const express = require("express");
 require('dotenv').config();
+require('./config/nodeSchedule.js');
 
 var participantesRouter = require('./routes/api/participantes');
 var servidoresDeAutorizacaoRouter = require('./routes/api/servidores-de-autorizacao');

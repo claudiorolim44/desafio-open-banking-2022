@@ -4,7 +4,8 @@ const participantesUrl =
     'https://data.directory.openbankingbrasil.org.br/participants'
 
 var participanteModelo = {
-    obterTodosParticipantes
+    obterTodosParticipantes,
+    inserirTodosParticipantesNoBackup
 };
 
 // Retorna a lista de participantes fornecidas pelo openbankingbrasil.org.br
