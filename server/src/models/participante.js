@@ -4,9 +4,7 @@ const participantesUrl =
     'https://data.directory.openbankingbrasil.org.br/participants'
 
 var participanteModelo = {
-    obterTodosParticipantes,
-    obterTodosParticipantesPeloBackup,
-    inserirTodosParticipantesNoBackup
+    obterTodosParticipantes
 };
 
 // Retorna a lista de participantes fornecidas pelo openbankingbrasil.org.br
@@ -14,10 +12,15 @@ function obterTodosParticipantes() {
     return new Promise((resolve, reject) => {
         axios.get(participantesUrl)
         .then((response) => {
-            resolve(response.data);
-        })
+            inserirTodosParticipantesNoBackup(response.data)
+              .catch(err => console.log("err.message", err.message))
+              resolve(response.data);
+        })        
         .catch((error) => {
-            reject(error)
+            console.log("error.message2", error.message)
+            obterTodosParticipantesPeloBackup()
+              .then(data => resolve(data))
+              .catch(error => reject(error))
         });
     });
 };
